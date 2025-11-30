@@ -113,9 +113,9 @@
     n?n[h]:y in r?n[r[y]]:null}function F(h){if(!document.baseURI||!h||h.startsWith("/"))return h;var n=(new URL(document.baseURI)).origin;return I(h,n)}function I(h,n){return h.startsWith(n)?h.slice(n.length):h}function O(h,n){h=t(Object.keys(h));for(var r=h.next();!r.done;r=h.next())r=r.value,n[l(r)]=r;h=t(Object.keys(IMG_SEARCH_REPLACE_MAP));for(r=h.next();!r.done;r=h.next())r=r.value,r.includes("&aspect=")||(n[l(r)]=r)}function X(){for(var h=t(Object.entries(IMG_GEN_REPLACE_MAP)),n=h.next(),r={};!n.done;r=
     {P:void 0},n=h.next()){var y=t(n.value);n=y.next().value;y=y.next().value;r.P=n;n=y;n.startsWith("data:text/plain;utf-8,")?fa.C[r.P]=m(n.slice(22)):(fa.B[r.P]=u(n),fa.B[r.P].then(function(A){return function(){fa.D.add(A.P)}}(r)))}}function Id(h){if(!h.startsWith("/image?query=")||!IMG_SEARCH_REIMAGINE_PARAM)return h;var n=f(h);return D(n,IMG_SEARCH_REPLACE_MAP,wb)?h:"/gen?prompt="+I(h,"/image?query=")+"&reimagine="+IMG_SEARCH_REIMAGINE_PARAM}function bc(h){var n,r,y,A;return w(function(B){if(B.A==
     1){n=g(h);if(r=fa.C[n])return console.debug("Returning error url for prompt: ",prompt),B.return(r);y=D(n,fa.B,fa.A);if(!y)return console.debug("No image found for prompt: ",prompt),B.return("");A=kd;return v(B,y,2)}return B.return(A(B.B).toString())})}function Jd(h,n){var r=h.style.opacity;if(h.offsetParent===null||r!==""&&Number(r)<=.15){var y;(y=la)==null||y.call(h,n)}else{r=new Image;r.onload=function(){var B=h.style.transition,P=h.style.opacity;h.style.transition="none";h.style.opacity="0";var L;
-    (L=la)==null||L.call(h,n);setTimeout(function(){h.style.transition="opacity 0.2s ease-in-out";h.style.opacity="1";setTimeout(function(){h.style.transition=B;P==="0"?console.debug("Unexpected: orgOpacity of 0."):h.style.opacity=P;var J=h.getAttribute("go-aspect-ratio");h.style.aspectRatio=J?J:""},250)},10)};var A;(A=la)==null||A.call(r,n)}}function af(h,n){var r,y,A,B,P,L,J,H;return w(function(C){switch(C.A){case 1:C.F=2;var ma=r=g(n),ba=fa.D,cc=fa.A,Ya=l(ma);if(!ba.has(ma)&&!ba.has(cc[Ya])){C.A=4;
+    (L=la)==null||L.call(h,n);setTimeout(function(){h.style.transition="opacity 0.2s ease-in-out";h.style.opacity="1";setTimeout(function(){h.style.transition=B;P==="0"?console.debug("Unexpected: orgOpacity of 0."):h.style.opacity=P;var J=h.getAttribute("go-aspect-ratio");h.style.aspectRatio=J?J:""},250)},10)};var A;(A=la)==null||A.call(r,n)}}function af(h,n){var r,y,A,B,P,L,J,H;return w(function(C){switch(C.A){case 1:if(h.src&&h.src.startsWith("blob:"))return C.return();C.F=2;var ma=r=g(n),ba=fa.D,cc=fa.A,Ya=l(ma);if(!ba.has(ma)&&!ba.has(cc[Ya])){C.A=4;
     break}return v(C,bc(n),5);case 5:if(y=C.B)return(A=la)==null||A.call(h,y),C.return();case 4:return(B=la)==null||B.call(h,dc),(P=n.match(/aspectRatio=(\d+:\d+)$/))&&P[1]!=="1:1"&&(L=P[1].replace(":","/"),h.setAttribute("go-aspect-ratio",h.style.aspectRatio),h.style.aspectRatio=L),v(C,bc(n),6);case 6:J=C.B;if(!J)return console.debug("No gen image found for prompt: ",n),b(h),C.return();Jd(h,J);C.A=0;C.F=0;break;case 2:H=va(C),console.debug("Error replacing generated image src",H),C.A=0}})}function bf(h,
-    n){var r,y,A,B,P,L,J,H,C,ma,ba,cc,Ya,Za,Kd,Ld,Md,Nd,ec;return w(function(Od){try{r=f(n);y=D(r,IMG_SEARCH_REPLACE_MAP,wb);A=D(r,IMG_SEARCH_ATTRIBUTION_MAP,Pd);B=null;A&&(B=sd(A));if(!y)return console.debug("no image search found for key: ",r),b(h),Od.return();P=t(y);L=P.next().value;J=P.next().value;H=L;C=J;ma=window.getComputedStyle(h);if(cc=(ba=h.parentElement)&&ba.classList.contains("dyn-img-link-wrapper-di-script")){if(Ya=ba.querySelector(".dyn-img-link-di-script")){var Qd=md(C);Qd!==void 0&&(Ya.href=
+    n){var r,y,A,B,P,L,J,H,C,ma,ba,cc,Ya,Za,Kd,Ld,Md,Nd,ec;return w(function(Od){try{if(h.src&&h.src.startsWith("blob:"))return Od.return();r=f(n);y=D(r,IMG_SEARCH_REPLACE_MAP,wb);A=D(r,IMG_SEARCH_ATTRIBUTION_MAP,Pd);B=null;A&&(B=sd(A));if(!y)return console.debug("no image search found for key: ",r),b(h),Od.return();P=t(y);L=P.next().value;J=P.next().value;H=L;C=J;ma=window.getComputedStyle(h);if(cc=(ba=h.parentElement)&&ba.classList.contains("dyn-img-link-wrapper-di-script")){if(Ya=ba.querySelector(".dyn-img-link-di-script")){var Qd=md(C);Qd!==void 0&&(Ya.href=
     Qd);Ya.title="Image Source: "+C}if((Za=ba.querySelector(".dyn-img-attribution-button-di-script"))&&B){var $a=B,Ha=Za.cloneNode(!0);Za.parentNode?Za.parentNode.replaceChild(Ha,Za):console.debug("Cannot replace image attribution button.");rd($a,Ha)}else console.debug("Unable to update button event listener.");ba.style.borderRadius=ma.borderRadius;(Kd=la)==null||Kd.call(h,H)}else{Date.now()<Rd+500?((Ld=la)==null||Ld.call(h,dc),Jd(h,H)):(Md=la)==null||Md.call(h,H);if(B){Ha=B;var ab=document.createElement("button");
     ab.className="dyn-img-attribution-button-di-script";ab.title="Image Attribution";rd(Ha,ab);var fc=document.createElement("span");fc.className="material-symbols-outlined";fc.textContent="open_in_full";ab.appendChild(fc);var Sd=ab}else{var za=document.createElement("a");za.className="dyn-img-link-di-script";za.target="_blank";za.rel="noopener noreferrer";var Td=md(C);Td!==void 0&&(za.href=Td);za.title="Image Source: "+C;var hc=document.createElement("span");hc.className="google-symbols";hc.textContent=
     "link";za.appendChild(hc);Sd=za}Nd=Sd;if(B){var Ud,Vd;if((Ud=Rc(B,ad,14))==null)var Wd=void 0;else{if((Vd=Rc(Ud,$c,2))==null)var Xd=void 0;else{var ic=ic===void 0?"":ic;var Yd;Xd=(Yd=Uc(Vd,1))!=null?Yd:ic}Wd=Xd}if(Ha=Wd){var jc=document.createElement("span");jc.className="dyn-img-inline-attribution-di-script";jc.textContent=Ha;$a=jc}else $a=null}else $a=null;ec=$a;var cf=window.getComputedStyle(h),Ia=document.createElement("div");Ia.className="dyn-img-link-wrapper-di-script";Ia.style.borderRadius=
@@ -465,37 +465,37 @@
                 <!-- Tabs -->
                 <div class="flex justify-center mb-8 overflow-x-auto pb-2">
                     <div class="flex space-x-2 bg-slate-100 p-1 rounded-xl">
-                        <button onclick="switchTab('web_data')" id="tab-web_data" class="px-6 py-2 rounded-lg text-sm font-medium transition-all tab-inactive hover:bg-white/50">Web Search Data</button>
+                        <button onclick="switchTab('web_data')" id="tab-web_data" class="px-6 py-2 rounded-lg text-sm font-medium transition-all tab-active bg-white shadow-sm">Web Search Data</button>
                         <button onclick="switchTab('exploration')" id="tab-exploration" class="px-6 py-2 rounded-lg text-sm font-medium transition-all tab-inactive hover:bg-white/50">Agent Exploration</button>
-                        <button onclick="switchTab('persona')" id="tab-persona" class="px-6 py-2 rounded-lg text-sm font-medium transition-all tab-active bg-white shadow-sm">Persona Hub</button>
+                        <button onclick="switchTab('persona')" id="tab-persona" class="px-6 py-2 rounded-lg text-sm font-medium transition-all tab-inactive hover:bg-white/50">Persona Hub</button>
                     </div>
                 </div>
     
                 <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 shadow-sm min-h-[400px] flex flex-col md:flex-row gap-8 items-center">
                     <!-- Content Area -->
                     <div class="w-full md:w-1/2 order-2 md:order-1">
-                        <h3 id="data-title" class="text-2xl font-bold text-slate-900 mb-4">Persona Hub Augmentation</h3>
-                        <p id="data-content" class="text-slate-600 leading-relaxed mb-6">Leveraging the 'Persona Hub' dataset to generate diverse user intents. By adopting different personas (e.g., 'Financial Analyst', 'Historian'), the system generates varied research queries to make the model robust to different domains.</p>
+                        <h3 id="data-title" class="text-2xl font-bold text-slate-900 mb-4">Multi-Hop URLQA</h3>
+                        <p id="data-content" class="text-slate-600 leading-relaxed mb-6">To train the agent in complex information retrieval, the team constructed the 'URLQA' dataset. It involves starting from a seed URL and traversing links to aggregate information.<br><br><strong>Crucially:</strong> The data isn't just Q&amp;A. It includes the full <em>trajectory</em>—the sequence of clicks, scrolls, and reasoning steps.</p>
                         <ul id="data-points" class="space-y-3">
                     <li class="flex items-start">
                         <span class="material-symbols-outlined text-green-500 mr-2">check_circle</span>
-                        <span class="text-slate-700">1B+ Synthetic Personas.</span>
+                        <span class="text-slate-700">Seed URLs from diverse domains.</span>
                     </li>
                 
                     <li class="flex items-start">
                         <span class="material-symbols-outlined text-green-500 mr-2">check_circle</span>
-                        <span class="text-slate-700">Domain-specific vocabulary.</span>
+                        <span class="text-slate-700">Questions requiring math/sorting.</span>
                     </li>
                 
                     <li class="flex items-start">
                         <span class="material-symbols-outlined text-green-500 mr-2">check_circle</span>
-                        <span class="text-slate-700">Diverse intent modeling.</span>
+                        <span class="text-slate-700">Verifiable answers.</span>
                     </li>
                 </ul>
                     </div>
                     <!-- Image Area -->
                     <div class="w-full md:w-1/2 order-1 md:order-2">
-                        <img id="data-img" src="blob:https://1x88h08ynqc9mrpps97657ndw90hvlrvbhd60bbki3322q9oxj-h833788197.scf.usercontent.goog/7b6d9473-ec15-4d16-acec-fc6bd6ef2165" go-data-src="/gen?prompt=digital+web+spider+collecting+data+nodes+blue+and+white+clean+style&amp;aspect=4:3" class="rounded-xl shadow-lg w-full object-cover h-64 md:h-80" alt="Data Illustration" style="">
+                        <img id="data-img" src="blob:https://1x88h08ynqc9mrpps97657ndw90hvlrvbhd60bbki3322q9oxj-h833788197.scf.usercontent.goog/7431700e-8cfa-4aa0-83f0-e27e39d2f885" go-data-src="/gen?prompt=digital+web+spider+collecting+data+nodes+blue+and+white+clean+style&amp;aspect=4:3" class="rounded-xl shadow-lg w-full object-cover h-64 md:h-80" alt="Data Illustration" style="">
                     </div>
                 </div>
             </div>
